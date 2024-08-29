@@ -30,10 +30,10 @@ const Enquiry = () => {
       try {
         setLoading(true);
         const token = localStorage.getItem("authToken");
-        if (!token) {
-          navigate("/login");
-          return;
-        }
+        // if (!token) {
+        //   navigate("/login");
+        //   return;
+        // }
         const res = await axios.get(
           "https://backend-7aeg.onrender.com/getEnquiry",
           {
@@ -109,10 +109,10 @@ const Enquiry = () => {
       setSearchQuery(""); // Clear the search query
       setLoading(true);
       const token = localStorage.getItem("authToken");
-      if (!token) {
-        navigate("/login");
-        return;
-      }
+      // if (!token) {
+      //   navigate("/login");
+      //   return;
+      // }
       const res = await axios.get(
         "https://backend-7aeg.onrender.com/getEnquiry",
         {
@@ -159,7 +159,7 @@ const Enquiry = () => {
     } catch (err) {
       setError(err);
       window.alert("token expired");
-      navigate("/login");
+      // navigate("/login");
       setLoading(false);
     }
   };
